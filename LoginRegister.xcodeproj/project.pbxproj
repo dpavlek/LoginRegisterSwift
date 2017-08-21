@@ -12,6 +12,14 @@
 		0E3DDAE41F4AF752005E0B34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DDAE21F4AF752005E0B34 /* Main.storyboard */; };
 		0E3DDAE61F4AF752005E0B34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DDAE51F4AF752005E0B34 /* Assets.xcassets */; };
 		0E3DDAE91F4AF752005E0B34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DDAE71F4AF752005E0B34 /* LaunchScreen.storyboard */; };
+		0E3DDAF11F4AF93D005E0B34 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DDAF01F4AF93D005E0B34 /* Login.storyboard */; };
+		0E3DDAF31F4AF970005E0B34 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DDAF21F4AF970005E0B34 /* LoginViewController.swift */; };
+		0E3DDAF51F4AF995005E0B34 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DDAF41F4AF995005E0B34 /* LoginViewModel.swift */; };
+		0E3DDAF81F4AF9AF005E0B34 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3DDAF71F4AF9AF005E0B34 /* Register.storyboard */; };
+		0E3DDAFA1F4AF9D0005E0B34 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DDAF91F4AF9D0005E0B34 /* RegisterViewController.swift */; };
+		0E3DDAFC1F4AF9E4005E0B34 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DDAFB1F4AF9E4005E0B34 /* RegisterViewModel.swift */; };
+		0E3DDAFF1F4AFA02005E0B34 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DDAFE1F4AFA02005E0B34 /* MainViewModel.swift */; };
+		C46D078FA8E529BD78F156B0 /* Pods_LoginRegister.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8555E1BD81253FF316D05F2A /* Pods_LoginRegister.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +30,16 @@
 		0E3DDAE51F4AF752005E0B34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3DDAE81F4AF752005E0B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3DDAEA1F4AF752005E0B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E3DDAF01F4AF93D005E0B34 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0E3DDAF21F4AF970005E0B34 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0E3DDAF41F4AF995005E0B34 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0E3DDAF71F4AF9AF005E0B34 /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		0E3DDAF91F4AF9D0005E0B34 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		0E3DDAFB1F4AF9E4005E0B34 /* RegisterViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		0E3DDAFE1F4AFA02005E0B34 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		34A030106EA95488192482ED /* Pods-LoginRegister.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginRegister.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoginRegister/Pods-LoginRegister.release.xcconfig"; sourceTree = "<group>"; };
+		3F8AB43F89180C3FE529B84F /* Pods-LoginRegister.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginRegister.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoginRegister/Pods-LoginRegister.debug.xcconfig"; sourceTree = "<group>"; };
+		8555E1BD81253FF316D05F2A /* Pods_LoginRegister.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoginRegister.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46D078FA8E529BD78F156B0 /* Pods_LoginRegister.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +59,8 @@
 			children = (
 				0E3DDADD1F4AF752005E0B34 /* LoginRegister */,
 				0E3DDADC1F4AF752005E0B34 /* Products */,
+				9D62FB3ABDA88E94BD778C4D /* Pods */,
+				E7F12C13E76DA0F1346683AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +75,62 @@
 		0E3DDADD1F4AF752005E0B34 /* LoginRegister */ = {
 			isa = PBXGroup;
 			children = (
+				0E3DDB001F4AFA0A005E0B34 /* Main */,
+				0E3DDAFD1F4AF9EA005E0B34 /* Register */,
+				0E3DDAF61F4AF99C005E0B34 /* Login */,
 				0E3DDADE1F4AF752005E0B34 /* AppDelegate.swift */,
-				0E3DDAE01F4AF752005E0B34 /* ViewController.swift */,
-				0E3DDAE21F4AF752005E0B34 /* Main.storyboard */,
 				0E3DDAE51F4AF752005E0B34 /* Assets.xcassets */,
 				0E3DDAE71F4AF752005E0B34 /* LaunchScreen.storyboard */,
 				0E3DDAEA1F4AF752005E0B34 /* Info.plist */,
 			);
 			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		0E3DDAF61F4AF99C005E0B34 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0E3DDAF01F4AF93D005E0B34 /* Login.storyboard */,
+				0E3DDAF21F4AF970005E0B34 /* LoginViewController.swift */,
+				0E3DDAF41F4AF995005E0B34 /* LoginViewModel.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		0E3DDAFD1F4AF9EA005E0B34 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				0E3DDAF71F4AF9AF005E0B34 /* Register.storyboard */,
+				0E3DDAF91F4AF9D0005E0B34 /* RegisterViewController.swift */,
+				0E3DDAFB1F4AF9E4005E0B34 /* RegisterViewModel.swift */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		0E3DDB001F4AFA0A005E0B34 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E3DDAE01F4AF752005E0B34 /* ViewController.swift */,
+				0E3DDAFE1F4AFA02005E0B34 /* MainViewModel.swift */,
+				0E3DDAE21F4AF752005E0B34 /* Main.storyboard */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		9D62FB3ABDA88E94BD778C4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F8AB43F89180C3FE529B84F /* Pods-LoginRegister.debug.xcconfig */,
+				34A030106EA95488192482ED /* Pods-LoginRegister.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E7F12C13E76DA0F1346683AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8555E1BD81253FF316D05F2A /* Pods_LoginRegister.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +140,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3DDAED1F4AF752005E0B34 /* Build configuration list for PBXNativeTarget "LoginRegister" */;
 			buildPhases = (
+				754B1B5B27C04650CA37EB3C /* [CP] Check Pods Manifest.lock */,
 				0E3DDAD71F4AF752005E0B34 /* Sources */,
 				0E3DDAD81F4AF752005E0B34 /* Frameworks */,
 				0E3DDAD91F4AF752005E0B34 /* Resources */,
+				05A0ECE39149E5B29DED3355 /* [CP] Embed Pods Frameworks */,
+				12DFE92BACCA29E38B1ED35F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,19 +196,74 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3DDAF11F4AF93D005E0B34 /* Login.storyboard in Resources */,
 				0E3DDAE91F4AF752005E0B34 /* LaunchScreen.storyboard in Resources */,
 				0E3DDAE61F4AF752005E0B34 /* Assets.xcassets in Resources */,
 				0E3DDAE41F4AF752005E0B34 /* Main.storyboard in Resources */,
+				0E3DDAF81F4AF9AF005E0B34 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05A0ECE39149E5B29DED3355 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoginRegister/Pods-LoginRegister-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		12DFE92BACCA29E38B1ED35F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LoginRegister/Pods-LoginRegister-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		754B1B5B27C04650CA37EB3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E3DDAD71F4AF752005E0B34 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3DDAFF1F4AFA02005E0B34 /* MainViewModel.swift in Sources */,
+				0E3DDAF51F4AF995005E0B34 /* LoginViewModel.swift in Sources */,
+				0E3DDAFC1F4AF9E4005E0B34 /* RegisterViewModel.swift in Sources */,
+				0E3DDAFA1F4AF9D0005E0B34 /* RegisterViewController.swift in Sources */,
+				0E3DDAF31F4AF970005E0B34 /* LoginViewController.swift in Sources */,
 				0E3DDAE11F4AF752005E0B34 /* ViewController.swift in Sources */,
 				0E3DDADF1F4AF752005E0B34 /* AppDelegate.swift in Sources */,
 			);
@@ -259,6 +386,7 @@
 		};
 		0E3DDAEE1F4AF752005E0B34 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F8AB43F89180C3FE529B84F /* Pods-LoginRegister.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KZ7LVBES5H;
@@ -272,6 +400,7 @@
 		};
 		0E3DDAEF1F4AF752005E0B34 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34A030106EA95488192482ED /* Pods-LoginRegister.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KZ7LVBES5H;
@@ -302,6 +431,7 @@
 				0E3DDAEF1F4AF752005E0B34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
