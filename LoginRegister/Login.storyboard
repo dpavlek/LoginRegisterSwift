@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="4Ro-cU-QTn">
             <objects>
-                <viewController id="wXU-kZ-HxG" customClass="LoginViewController" customModule="LoginRegister" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wXU-kZ-HxG" customClass="LoginViewController" customModule="LoginRegister" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VAc-fl-Fmf"/>
                         <viewControllerLayoutGuide type="bottom" id="FmE-hk-Dqt"/>
@@ -22,18 +22,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sDw-wO-ZUN">
-                                <rect key="frame" x="32" y="164" width="256" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3P-eu-Nsa">
-                                <rect key="frame" x="32" y="202" width="256" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tG5-5X-6rR">
                                 <rect key="frame" x="132" y="519" width="57" height="29"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
@@ -42,8 +30,33 @@
                                     <action selector="registerAction:" destination="wXU-kZ-HxG" eventType="touchUpInside" id="W0x-Il-Mde"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLp-5H-67W">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Login" id="Pzm-8R-vvg">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rBh-Un-eYg">
+                                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="dismissLogin:" destination="wXU-kZ-HxG" id="S1g-qb-nwN"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sDw-wO-ZUN">
+                                <rect key="frame" x="32" y="156" width="256" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3P-eu-Nsa">
+                                <rect key="frame" x="32" y="194" width="256" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jE5-fU-8oh">
-                                <rect key="frame" x="103" y="369" width="114" height="42"/>
+                                <rect key="frame" x="103" y="361" width="114" height="42"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <state key="normal" title="SIGN IN"/>
                                 <connections>
@@ -51,7 +64,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q67-dd-QeK">
-                                <rect key="frame" x="98" y="240" width="124" height="27"/>
+                                <rect key="frame" x="98" y="232" width="124" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="Forgot password?"/>
                                 <connections>
@@ -59,7 +72,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evw-R6-5rV">
-                                <rect key="frame" x="100" y="95" width="120" height="21"/>
+                                <rect key="frame" x="100" y="87" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -68,6 +81,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="evw-R6-5rV" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="84" id="0Ln-GF-9y9"/>
+                            <constraint firstItem="evw-R6-5rV" firstAttribute="top" secondItem="QLp-5H-67W" secondAttribute="bottom" constant="23" id="5nE-Dx-lXc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q67-dd-QeK" secondAttribute="trailing" constant="82" id="6q5-l8-KLX"/>
                             <constraint firstItem="FmE-hk-Dqt" firstAttribute="top" secondItem="tG5-5X-6rR" secondAttribute="bottom" constant="20" id="8Dy-Nm-1p0"/>
                             <constraint firstItem="h3P-eu-Nsa" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="16" id="9R5-Zt-SYb"/>
@@ -75,19 +89,25 @@
                             <constraint firstItem="tG5-5X-6rR" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="116" id="HAc-qz-F5h"/>
                             <constraint firstItem="Q67-dd-QeK" firstAttribute="top" secondItem="h3P-eu-Nsa" secondAttribute="bottom" constant="8" id="HQp-rN-E1h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sDw-wO-ZUN" secondAttribute="trailing" constant="16" id="Im6-WU-wOn"/>
+                            <constraint firstAttribute="trailing" secondItem="QLp-5H-67W" secondAttribute="trailing" id="JvF-4b-lPr"/>
                             <constraint firstItem="Q67-dd-QeK" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="82" id="LLq-6S-gNS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tG5-5X-6rR" secondAttribute="trailing" constant="115" id="Orv-T6-XWF"/>
                             <constraint firstItem="jE5-fU-8oh" firstAttribute="top" secondItem="Q67-dd-QeK" secondAttribute="bottom" constant="102" id="Sdp-hE-SMb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jE5-fU-8oh" secondAttribute="trailing" constant="87" id="U80-IH-qPS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="evw-R6-5rV" secondAttribute="trailing" constant="84" id="WZz-Tj-pqS"/>
-                            <constraint firstItem="evw-R6-5rV" firstAttribute="top" secondItem="VAc-fl-Fmf" secondAttribute="bottom" constant="31" id="X7K-L3-Y9T"/>
+                            <constraint firstItem="QLp-5H-67W" firstAttribute="top" secondItem="VAc-fl-Fmf" secondAttribute="bottom" id="Z6U-7H-egC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h3P-eu-Nsa" secondAttribute="trailing" constant="16" id="asE-6A-V3f"/>
+                            <constraint firstItem="QLp-5H-67W" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leading" id="bjT-gg-pmU"/>
                             <constraint firstItem="sDw-wO-ZUN" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="16" id="sko-Hd-UJA"/>
                             <constraint firstItem="h3P-eu-Nsa" firstAttribute="top" secondItem="sDw-wO-ZUN" secondAttribute="bottom" constant="8" id="uPb-ck-gcH"/>
                             <constraint firstItem="jE5-fU-8oh" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="87" id="vyN-Cy-M9y"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="eed-T6-Xcd"/>
+                    <navigationItem key="navigationItem" id="eed-T6-Xcd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vhl-uB-rqU">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emailInput" destination="sDw-wO-ZUN" id="har-5n-N67"/>
                         <outlet property="passwordInput" destination="h3P-eu-Nsa" id="naT-5t-djv"/>
@@ -95,25 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwG-Lz-nSi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956.25" y="105.63380281690141"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="oME-2K-9pn">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FKL-Sq-Mbo" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jzD-j7-e2I">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wXU-kZ-HxG" kind="relationship" relationship="rootViewController" id="Yv0-YI-2oY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ug-Sz-S0Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="108.39580209895054"/>
+            <point key="canvasLocation" x="375" y="120"/>
         </scene>
     </scenes>
 </document>

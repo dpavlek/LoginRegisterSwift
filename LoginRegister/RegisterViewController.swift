@@ -35,6 +35,10 @@ class RegisterViewController: UIViewController {
         let userInputtedData = registerInfo(username: usernameInput.text, email: emailInput.text, password: pwdInput.text, password2: pwdReInput.text, image: userImage.image)
     }
 
+    @IBAction func dismissRegistration(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+
     func pwdTextFieldChanged(_ textField: UITextField) {
         if pwdInput.text?.characters.count == 0 {
             pwdInput.text = ""
@@ -52,5 +56,4 @@ class RegisterViewController: UIViewController {
             pwdReInput.placeholder = NSLocalizedString("registration_passwords_dont_match", comment: "")
         }
     }
-
 }

@@ -11,14 +11,16 @@ import UIKit
 
 class User {
     
-    let username: String?
-    let email: String?
-    let password: String?
-    let icon: UIImage?
+    static let currentUser = User()
+    
+    var username: String?
+    var email: String?
+    var password: String?
+    var icon: UIImage?
 
-    init(username: String, email: String) {
-        self.username = username
-        self.email = email
+    private init?() {
+        self.username = nil
+        self.email = nil
         self.password = nil
         self.icon = nil
     }
