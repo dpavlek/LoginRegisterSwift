@@ -10,6 +10,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var passwordInput: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,5 +25,15 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func ForgotPasswordAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func signInAction(_ sender: UIButton) {
+    }
+    
+    @IBAction func registerAction(_ sender: UIButton) {
+    }
+    
 
 }

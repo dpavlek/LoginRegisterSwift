@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  LoginRegister
+
+  Created by COBE Osijek on 21/08/2017.
+  Copyright © 2017 COBE Osijek. All rights reserved.
+*/
+
+"registration_empty_username_error" = "Error! Username field empty!";
+"registration_email_wrong_format_error" = "Error! Wrong Email Format!";
+"registration_password_error" = "Error! Password Not Valid";
+"registration_passwords_dont_match" = "Error! Passwords don't match!";
+"general_no_internet_error" = "Error! No internet connection!";
+"registration_email_already_in_use" = "Error! E-Mail already registered!";
+"registration_server_error" = "Server error!";

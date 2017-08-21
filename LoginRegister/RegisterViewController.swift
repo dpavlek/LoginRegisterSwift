@@ -10,8 +10,18 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    let registerViewModel = RegisterViewModel()
+
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var usernameInput: UITextField!
+    @IBOutlet weak var emailInput: UITextField!
+    @IBOutlet weak var pwdInput: UITextField!
+    @IBOutlet weak var pwdReInput: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        pwdReInput.addTarget(self, action: #selector(pwdTextFieldChanged(_:)), for: .editingChanged)
+        pwdInput.addTarget(self, action: #selector(rePwdTextFieldChanged(_:)), for: .editingChanged)
 
         // Do any additional setup after loading the view.
     }
@@ -20,16 +30,27 @@ class RegisterViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func signUpAction(_ sender: UIButton) {
+        let userInputtedData = registerInfo(username: usernameInput.text, email: emailInput.text, password: pwdInput.text, password2: pwdReInput.text, image: userImage.image)
     }
-    */
+
+    func pwdTextFieldChanged(_ textField: UITextField) {
+        if pwdInput.text?.characters.count == 0 {
+            pwdInput.text = ""
+            pwdInput.placeholder = NSLocalizedString("registration_password_error", comment: "")
+            /* let alertMessage = NSLocalizedString("registration_password_error", comment: "")
+             let alert = UIAlertController(title: "Error", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+             self.present(alert,animated: true,completion: nil) */
+        }
+    }
+
+    func rePwdTextFieldChanged(_ textField: UITextField) {
+        if pwdReInput.text == pwdInput.text {
+            pwdReInput.text = ""
+            pwdReInput.placeholder = NSLocalizedString("registration_passwords_dont_match", comment: "")
+        }
+    }
 
 }
