@@ -28,30 +28,30 @@ class LoginViewController: UIViewController {
         signInButton.isEnabled = false
     }
     
-    func pwdTextFieldChanged(_ textField: UITextField){
-        if checkEmailValidity(),checkPasswordValidity(){
+    func pwdTextFieldChanged(_ textField: UITextField) {
+        if checkEmailValidity(), checkPasswordValidity() {
             signInButton.isEnabled = true
         }
     }
     
-    func emailTextFieldChanged(_ textField: UITextField){
-        if checkEmailValidity(),checkPasswordValidity(){
+    func emailTextFieldChanged(_ textField: UITextField) {
+        if checkEmailValidity(), checkPasswordValidity() {
             signInButton.isEnabled = true
         }
     }
     
-    func checkPasswordValidity() -> Bool{
-        if let password = passwordInput.text{
-            if password.characters.count >= 5{
+    func checkPasswordValidity() -> Bool {
+        if let password = passwordInput.text {
+            if password.characters.count >= 5 {
                 return true
             }
         }
         return false
     }
     
-    func checkEmailValidity() -> Bool{
-        if let email = emailInput.text{
-            if email.isEmail(){
+    func checkEmailValidity() -> Bool {
+        if let email = emailInput.text {
+            if email.isEmail() {
                 return true
             }
         }
@@ -66,12 +66,14 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signInAction(_ sender: UIButton) {
+        let userLoginData = LoginInfo(email: emailInput.text!, password: passwordInput.text!)
+        loginViewModel.signInToService(userInfo: userLoginData)
     }
     
     @IBAction func registerAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "registrationViewController")
-        self.present(controller, animated: true, completion: nil)
+        present(controller, animated: true, completion: nil)
     }
     
 }
