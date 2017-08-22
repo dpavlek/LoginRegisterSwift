@@ -36,7 +36,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZPa-Th-t4K">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ZPa-Th-t4K">
                                 <rect key="frame" x="117" y="82" width="86" height="86"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZPa-Th-t4K" secondAttribute="height" multiplier="1:1" id="MuQ-c6-8Zz"/>
@@ -52,19 +52,19 @@
                                 <rect key="frame" x="16" y="234" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1L-u0-WN4">
                                 <rect key="frame" x="16" y="272" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3sl-LM-uob">
                                 <rect key="frame" x="16" y="310" width="288" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fMn-aQ-Y55">
                                 <rect key="frame" x="16" y="364" width="288" height="42"/>
@@ -74,6 +74,13 @@
                                     <action selector="signUpAction:" destination="qJ6-Ns-TIO" eventType="touchUpInside" id="GsR-cD-HIl"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click To Change" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuC-uZ-Qvf">
+                                <rect key="frame" x="117" y="147" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -102,6 +109,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Tz9-wv-ICY"/>
                     <connections>
+                        <outlet property="clickToChangeLabel" destination="SuC-uZ-Qvf" id="8n3-bY-gbB"/>
                         <outlet property="emailInput" destination="DM9-7a-KiX" id="Tct-ug-ZCm"/>
                         <outlet property="pwdInput" destination="j1L-u0-WN4" id="oqY-r7-S1o"/>
                         <outlet property="pwdReInput" destination="3sl-LM-uob" id="A6d-RA-2Ld"/>
@@ -111,7 +119,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNn-o5-SLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.875" y="133.09859154929578"/>
+            <point key="canvasLocation" x="3.75" y="107.74647887323944"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ProfilePhoto" width="125" height="140"/>
+    </resources>
 </document>

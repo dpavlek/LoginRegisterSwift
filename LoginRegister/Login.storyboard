@@ -47,13 +47,13 @@
                                 <rect key="frame" x="32" y="156" width="256" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3P-eu-Nsa">
                                 <rect key="frame" x="32" y="194" width="256" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jE5-fU-8oh">
                                 <rect key="frame" x="103" y="361" width="114" height="42"/>
@@ -111,6 +111,7 @@
                     <connections>
                         <outlet property="emailInput" destination="sDw-wO-ZUN" id="har-5n-N67"/>
                         <outlet property="passwordInput" destination="h3P-eu-Nsa" id="naT-5t-djv"/>
+                        <outlet property="signInButton" destination="jE5-fU-8oh" id="gYt-bY-Po3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwG-Lz-nSi" userLabel="First Responder" sceneMemberID="firstResponder"/>

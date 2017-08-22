@@ -9,17 +9,27 @@
 import Foundation
 import UIKit
 
-struct registerInfo{
+struct registerInfo {
     let username: String?
     let email: String?
     let password: String?
     let password2: String?
     let image: UIImage?
+
+    func returnDictionary() -> [String: String] {
+        let userDict: [String: String] = [
+            "name": username ?? "",
+            "email": email ?? "",
+            "password": password ?? "",
+        ]
+        return userDict
+    }
 }
 
-enum registrationError: Error{
+enum registrationError: Error {
     case blankUsername
     case blankEmail
     case wrongPassword
     case passwordNotEqual
+    case wrongEmail
 }

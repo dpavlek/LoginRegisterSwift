@@ -10,24 +10,54 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    private let loginViewModel = LoginViewModel()
+    
     @IBOutlet weak var emailInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordInput.addTarget(self, action: #selector(pwdTextFieldChanged(_:)), for: .editingDidEnd)
+        emailInput.addTarget(self, action: #selector(emailTextFieldChanged(_:)), for: .editingDidEnd)
         if User.currentUser?.email == nil {
             navigationItem.leftBarButtonItem?.isEnabled = false
         } else {
             navigationItem.leftBarButtonItem?.isEnabled = true
         }
-        
-        // Do any additional setup after loading the view.
+        signInButton.isEnabled = false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func pwdTextFieldChanged(_ textField: UITextField){
+        if checkEmailValidity(),checkPasswordValidity(){
+            signInButton.isEnabled = true
+        }
     }
+    
+    func emailTextFieldChanged(_ textField: UITextField){
+        if checkEmailValidity(),checkPasswordValidity(){
+            signInButton.isEnabled = true
+        }
+    }
+    
+    func checkPasswordValidity() -> Bool{
+        if let password = passwordInput.text{
+            if password.characters.count >= 5{
+                return true
+            }
+        }
+        return false
+    }
+    
+    func checkEmailValidity() -> Bool{
+        if let email = emailInput.text{
+            if email.isEmail(){
+                return true
+            }
+        }
+        return false
+    }
+    
     @IBAction func dismissLogin(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

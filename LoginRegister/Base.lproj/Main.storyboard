@@ -22,9 +22,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxh-fA-UCS">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="zxh-fA-UCS">
                                 <rect key="frame" x="94" y="238" width="132" height="30"/>
-                                <state key="normal" title="Login with another account"/>
+                                <state key="normal" title="Login again"/>
                                 <connections>
                                     <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="47p-R5-XYn"/>
                                 </connections>

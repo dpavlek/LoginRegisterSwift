@@ -13,3 +13,5 @@
 "general_no_internet_error" = "Error! No internet connection!";
 "registration_email_already_in_use" = "Error! E-Mail already registered!";
 "registration_server_error" = "Server error!";
+"registration_email_empty" = "Error! Email field is empty!";
+"default_error" = "Unknown Error Happened.";
