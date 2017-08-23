@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wXU-kZ-HxG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,19 +30,6 @@
                                     <action selector="registerAction:" destination="wXU-kZ-HxG" eventType="touchUpInside" id="W0x-Il-Mde"/>
                                 </connections>
                             </button>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QLp-5H-67W">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Login" id="Pzm-8R-vvg">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="rBh-Un-eYg">
-                                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="dismissLogin:" destination="wXU-kZ-HxG" id="S1g-qb-nwN"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sDw-wO-ZUN">
                                 <rect key="frame" x="32" y="156" width="256" height="30"/>
                                 <nil key="textColor"/>
@@ -81,7 +68,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="evw-R6-5rV" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="84" id="0Ln-GF-9y9"/>
-                            <constraint firstItem="evw-R6-5rV" firstAttribute="top" secondItem="QLp-5H-67W" secondAttribute="bottom" constant="23" id="5nE-Dx-lXc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q67-dd-QeK" secondAttribute="trailing" constant="82" id="6q5-l8-KLX"/>
                             <constraint firstItem="FmE-hk-Dqt" firstAttribute="top" secondItem="tG5-5X-6rR" secondAttribute="bottom" constant="20" id="8Dy-Nm-1p0"/>
                             <constraint firstItem="h3P-eu-Nsa" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="16" id="9R5-Zt-SYb"/>
@@ -89,15 +75,13 @@
                             <constraint firstItem="tG5-5X-6rR" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="116" id="HAc-qz-F5h"/>
                             <constraint firstItem="Q67-dd-QeK" firstAttribute="top" secondItem="h3P-eu-Nsa" secondAttribute="bottom" constant="8" id="HQp-rN-E1h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sDw-wO-ZUN" secondAttribute="trailing" constant="16" id="Im6-WU-wOn"/>
-                            <constraint firstAttribute="trailing" secondItem="QLp-5H-67W" secondAttribute="trailing" id="JvF-4b-lPr"/>
                             <constraint firstItem="Q67-dd-QeK" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="82" id="LLq-6S-gNS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tG5-5X-6rR" secondAttribute="trailing" constant="115" id="Orv-T6-XWF"/>
                             <constraint firstItem="jE5-fU-8oh" firstAttribute="top" secondItem="Q67-dd-QeK" secondAttribute="bottom" constant="102" id="Sdp-hE-SMb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jE5-fU-8oh" secondAttribute="trailing" constant="87" id="U80-IH-qPS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="evw-R6-5rV" secondAttribute="trailing" constant="84" id="WZz-Tj-pqS"/>
-                            <constraint firstItem="QLp-5H-67W" firstAttribute="top" secondItem="VAc-fl-Fmf" secondAttribute="bottom" id="Z6U-7H-egC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h3P-eu-Nsa" secondAttribute="trailing" constant="16" id="asE-6A-V3f"/>
-                            <constraint firstItem="QLp-5H-67W" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leading" id="bjT-gg-pmU"/>
+                            <constraint firstItem="evw-R6-5rV" firstAttribute="top" secondItem="VAc-fl-Fmf" secondAttribute="bottom" constant="67" id="j2z-LZ-Rsa"/>
                             <constraint firstItem="sDw-wO-ZUN" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="16" id="sko-Hd-UJA"/>
                             <constraint firstItem="h3P-eu-Nsa" firstAttribute="top" secondItem="sDw-wO-ZUN" secondAttribute="bottom" constant="8" id="uPb-ck-gcH"/>
                             <constraint firstItem="jE5-fU-8oh" firstAttribute="leading" secondItem="7Y4-73-eUS" secondAttribute="leadingMargin" constant="87" id="vyN-Cy-M9y"/>
@@ -106,6 +90,9 @@
                     <navigationItem key="navigationItem" id="eed-T6-Xcd">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Vhl-uB-rqU">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dismissLogin:" destination="wXU-kZ-HxG" id="ucJ-Q0-rGg"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -116,7 +103,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PwG-Lz-nSi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="120"/>
+            <point key="canvasLocation" x="2370" y="119.36619718309859"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mNp-C3-SgN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rmN-4J-vZQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9DL-jf-fov">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wXU-kZ-HxG" kind="relationship" relationship="rootViewController" id="Ucr-wg-sHX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CFm-Rq-Xpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1372.5" y="119.36619718309859"/>
         </scene>
     </scenes>
 </document>

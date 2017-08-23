@@ -55,21 +55,12 @@ class RegisterViewModel {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
                     debugPrint(response)
+                    onCompletion()
                 }
             case .failure(let encodingError):
                 print(encodingError)
+                onCompletion()
             }
-    }) }
-    
-    //    let registerResource = Resource<EmptyJSON>(
-    //        params: [
-    //            "name": username,
-    //            "email": email,
-    //            "password": password
-    //        ],
-    //        paramsPartName: "data",
-    //        files: files,
-    //        path: "/auth/sign-up",
-    //        encoding: .json,
-    //        method: .post)
+        })
+    }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qJ6-Ns-TIO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,19 +23,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bh2-l4-mFh">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Registration" id="0M9-t0-ICX">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="awQ-Re-sko">
-                                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="dismissRegistration:" destination="qJ6-Ns-TIO" id="FTT-3H-1LT"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePhoto" translatesAutoresizingMaskIntoConstraints="NO" id="ZPa-Th-t4K">
                                 <rect key="frame" x="117" y="82" width="86" height="86"/>
                                 <constraints>
@@ -90,21 +77,18 @@
                             <constraint firstItem="3sl-LM-uob" firstAttribute="top" secondItem="j1L-u0-WN4" secondAttribute="bottom" constant="8" id="BfR-3B-dPW"/>
                             <constraint firstItem="fMn-aQ-Y55" firstAttribute="leading" secondItem="RxL-N1-Lzx" secondAttribute="leadingMargin" id="DdU-zc-iKL"/>
                             <constraint firstItem="9pN-aS-hVl" firstAttribute="leading" secondItem="RxL-N1-Lzx" secondAttribute="leadingMargin" id="F8h-ta-vfa"/>
-                            <constraint firstItem="ZPa-Th-t4K" firstAttribute="top" secondItem="bh2-l4-mFh" secondAttribute="bottom" constant="18" id="GBv-ZD-koc"/>
                             <constraint firstItem="j1L-u0-WN4" firstAttribute="leading" secondItem="RxL-N1-Lzx" secondAttribute="leadingMargin" id="HUA-zz-CRy"/>
                             <constraint firstItem="ZPa-Th-t4K" firstAttribute="leading" secondItem="RxL-N1-Lzx" secondAttribute="leadingMargin" constant="101" id="LaC-hn-bfX"/>
                             <constraint firstItem="DM9-7a-KiX" firstAttribute="leading" secondItem="RxL-N1-Lzx" secondAttribute="leadingMargin" id="Tb0-Hg-eBa"/>
-                            <constraint firstItem="bh2-l4-mFh" firstAttribute="top" secondItem="zg8-11-JaG" secondAttribute="bottom" id="XqX-p7-pWb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZPa-Th-t4K" secondAttribute="trailing" constant="101" id="b08-di-n8h"/>
                             <constraint firstItem="j1L-u0-WN4" firstAttribute="top" secondItem="DM9-7a-KiX" secondAttribute="bottom" constant="8" id="bJM-GO-pYe"/>
                             <constraint firstItem="3sl-LM-uob" firstAttribute="leading" secondItem="RxL-N1-Lzx" secondAttribute="leadingMargin" id="ceV-tQ-RaG"/>
                             <constraint firstItem="DM9-7a-KiX" firstAttribute="trailing" secondItem="RxL-N1-Lzx" secondAttribute="trailingMargin" id="e8d-De-2vR"/>
-                            <constraint firstItem="bh2-l4-mFh" firstAttribute="leading" secondItem="RxL-N1-Lzx" secondAttribute="leading" id="fSA-F7-N6b"/>
                             <constraint firstItem="3sl-LM-uob" firstAttribute="trailing" secondItem="RxL-N1-Lzx" secondAttribute="trailingMargin" id="h1A-Ca-UdI"/>
+                            <constraint firstItem="ZPa-Th-t4K" firstAttribute="top" secondItem="zg8-11-JaG" secondAttribute="bottom" constant="62" id="mRG-zp-2uk"/>
                             <constraint firstItem="fMn-aQ-Y55" firstAttribute="top" secondItem="3sl-LM-uob" secondAttribute="bottom" constant="24" id="tzk-qS-Eh9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fMn-aQ-Y55" secondAttribute="trailing" id="vIr-T0-kOr"/>
                             <constraint firstItem="DM9-7a-KiX" firstAttribute="top" secondItem="9pN-aS-hVl" secondAttribute="bottom" constant="8" id="vuV-kC-EI1"/>
-                            <constraint firstAttribute="trailing" secondItem="bh2-l4-mFh" secondAttribute="trailing" id="zzy-Gk-t9p"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tz9-wv-ICY"/>
@@ -119,7 +103,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNn-o5-SLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3.75" y="107.74647887323944"/>
+            <point key="canvasLocation" x="1998.75" y="107.74647887323944"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="21u-Yl-aBs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZLj-WE-2WJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ggw-Ej-is3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qJ6-Ns-TIO" kind="relationship" relationship="rootViewController" id="biE-Tu-JRt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1mm-7y-Qj6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001.25" y="107.74647887323944"/>
         </scene>
     </scenes>
     <resources>

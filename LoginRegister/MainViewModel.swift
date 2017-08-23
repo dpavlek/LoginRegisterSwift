@@ -7,4 +7,11 @@
 //
 
 import Foundation
+import UIKit
+import Alamofire
 
+class Connectivity {
+    class var isConnectedToInternet: Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
+}

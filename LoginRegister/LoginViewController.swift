@@ -20,11 +20,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         passwordInput.addTarget(self, action: #selector(pwdTextFieldChanged(_:)), for: .editingDidEnd)
         emailInput.addTarget(self, action: #selector(emailTextFieldChanged(_:)), for: .editingDidEnd)
-        if User.currentUser?.email == nil {
-            navigationItem.leftBarButtonItem?.isEnabled = false
-        } else {
-            navigationItem.leftBarButtonItem?.isEnabled = true
-        }
         signInButton.isEnabled = false
         
         emailInput.delegate = self
@@ -33,6 +28,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         emailInput.tag = 0
         passwordInput.tag = 1
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if User.currentUser?.loggedIn == false {
+            navigationItem.leftBarButtonItem?.isEnabled = false
+        } else {
+            navigationItem.leftBarButtonItem?.isEnabled = true
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -79,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func dismissLogin(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ForgotPasswordAction(_ sender: UIButton) {
@@ -90,7 +93,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         loginViewModel.signInToService(userInfo: userLoginData) { [weak self] error in
             switch error {
             case .none:
-                self?.dismiss(animated: true, completion: nil)
+                self?.navigationController?.popViewController(animated: true)
             case .badRequest:
                 let alert = self?.loginViewModel.prepareAlert(forError: "login_bad_request")
                 self?.present(alert!, animated: true, completion: nil)
@@ -101,7 +104,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func registerAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "registrationViewController")
-        present(controller, animated: true, completion: nil)
+        self.navigationController?.show(controller, sender: self)
     }
     
 }
