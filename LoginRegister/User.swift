@@ -10,13 +10,14 @@ import Foundation
 import UIKit
 
 class User {
-    
+
     static let currentUser = User()
-    
+
     var username: String?
     var email: String?
     var password: String?
     var icon: UIImage?
+    var loggedIn: Bool = false
 
     private init?() {
         self.username = nil

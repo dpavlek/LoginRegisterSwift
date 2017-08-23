@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     private let loginViewModel = LoginViewModel()
     
@@ -26,17 +26,37 @@ class LoginViewController: UIViewController {
             navigationItem.leftBarButtonItem?.isEnabled = true
         }
         signInButton.isEnabled = false
+        
+        emailInput.delegate = self
+        passwordInput.delegate = self
+        
+        emailInput.tag = 0
+        passwordInput.tag = 1
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let nextField = textField.superview?.viewWithTag(textField.tag + 1) as? UITextField {
+            nextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
     }
     
     func pwdTextFieldChanged(_ textField: UITextField) {
         if checkEmailValidity(), checkPasswordValidity() {
             signInButton.isEnabled = true
+        } else {
+            signInButton.isEnabled = false
         }
     }
     
     func emailTextFieldChanged(_ textField: UITextField) {
         if checkEmailValidity(), checkPasswordValidity() {
             signInButton.isEnabled = true
+        } else {
+            signInButton.isEnabled = false
         }
     }
     
@@ -67,7 +87,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInAction(_ sender: UIButton) {
         let userLoginData = LoginInfo(email: emailInput.text!, password: passwordInput.text!)
-        loginViewModel.signInToService(userInfo: userLoginData)
+        loginViewModel.signInToService(userInfo: userLoginData) { [weak self] error in
+            switch error {
+            case .none:
+                self?.dismiss(animated: true, completion: nil)
+            case .badRequest:
+                let alert = self?.loginViewModel.prepareAlert(forError: "login_bad_request")
+                self?.present(alert!, animated: true, completion: nil)
+            }
+        }
     }
     
     @IBAction func registerAction(_ sender: UIButton) {

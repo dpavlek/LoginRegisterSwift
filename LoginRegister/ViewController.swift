@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if User.currentUser?.email == nil {
+        if User.currentUser?.loggedIn == false {
             let storyboard = UIStoryboard(name: "Login", bundle: nil)
             let controller = storyboard.instantiateViewController(withIdentifier: "loginViewController")
             self.present(controller, animated: true, completion: nil)

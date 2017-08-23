@@ -15,3 +15,5 @@
 "registration_server_error" = "Server error!";
 "registration_email_empty" = "Error! Email field is empty!";
 "default_error" = "Unknown Error Happened.";
+"login_bad_request" = "Server returned error 400.";
+"login_success" = "Successfully logged in!";

@@ -8,22 +8,32 @@
 
 import Foundation
 
-class LoginInfo{
+class LoginInfo {
     let email: String
     let password: String
     
-    init(email: String, password: String){
+    init(email: String, password: String) {
         self.email = email
         self.password = password
     }
     
-    func convertToJSON() -> Data{
+    func convertToDict() -> [String: String] {
+        
         let loginDict = [
             "email": email,
             "password": password
         ]
+        return loginDict
+    }
+    
+    func convertToJSON() -> Data {
         
-        let jsonData = try? JSONSerialization.data(withJSONObject: loginDict, options: .prettyPrinted)
+        let jsonData = try? JSONSerialization.data(withJSONObject: convertToDict(), options: .prettyPrinted)
         return jsonData!
     }
+}
+
+enum LoginError: Error{
+    case none
+    case badRequest
 }
