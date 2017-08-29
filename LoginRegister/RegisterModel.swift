@@ -33,3 +33,9 @@ enum registrationError: Error {
     case passwordNotEqual
     case wrongEmail
 }
+
+enum registrationServerError: Error{
+    case none
+    case error
+    case userExists
+}

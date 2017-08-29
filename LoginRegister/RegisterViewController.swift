@@ -31,8 +31,17 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
 
     @IBAction func signUpAction(_ sender: UIButton) {
         checkRegistrationInfo { [weak self] userData in
-            self?.registerViewModel.sendRegistrationToServer(userData: userData) { [weak self] _ in
-                self?.dismiss(animated: true, completion: nil)
+            self?.registerViewModel.sendRegistrationToServer(userData: userData) { [weak self] completion in
+                switch completion {
+                case .none:
+                    self?.dismiss(animated: true, completion: nil)
+                case .error:
+                    let alert = UIAlertController.prepareAlert(forError: "registration_server_fail")
+                    self?.present(alert, animated: true, completion: nil)
+                case .userExists:
+                    let alert = UIAlertController.prepareAlert(forError: "registration_user_exists")
+                    self?.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -64,27 +73,27 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         do {
             try registerViewModel.checkRegisterInput(registrationInfo: userInputtedData)
         } catch registrationError.blankEmail {
-            let alert = registerViewModel.prepareAlert(forError: "registration_email_empty")
+            let alert = UIAlertController.prepareAlert(forError: "registration_email_empty")
             present(alert, animated: true, completion: nil)
         } catch registrationError.blankUsername {
             usernameInput.text = ""
-            let alert = registerViewModel.prepareAlert(forError: "registration_empty_username_error")
+            let alert = UIAlertController.prepareAlert(forError: "registration_empty_username_error")
             present(alert, animated: true, completion: nil)
         } catch registrationError.wrongPassword {
             pwdInput.text = ""
             pwdReInput.text = ""
-            let alert = registerViewModel.prepareAlert(forError: "registration_password_error")
+            let alert = UIAlertController.prepareAlert(forError: "registration_password_error")
             present(alert, animated: true, completion: nil)
         } catch registrationError.passwordNotEqual {
             pwdReInput.text = ""
-            let alert = registerViewModel.prepareAlert(forError: "registration_passwords_dont_match")
+            let alert = UIAlertController.prepareAlert(forError: "registration_passwords_dont_match")
             present(alert, animated: true, completion: nil)
         } catch registrationError.wrongEmail {
             emailInput.text = ""
-            let alert = registerViewModel.prepareAlert(forError: "registration_email_wrong_format_error")
+            let alert = UIAlertController.prepareAlert(forError: "registration_email_wrong_format_error")
             present(alert, animated: true, completion: nil)
         } catch {
-            let alert = registerViewModel.prepareAlert(forError: "default_error")
+            let alert = UIAlertController.prepareAlert(forError: "default_error")
             present(alert, animated: true, completion: nil)
         }
         onComplete(userInputtedData)
@@ -97,7 +106,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     func pwdTextFieldChanged(_ textField: UITextField) {
         if let pwdCharCount = pwdInput.text?.characters.count, pwdCharCount < 5 {
             pwdInput.text = ""
-            let alert = registerViewModel.prepareAlert(forError: "registration_password_error")
+            let alert = UIAlertController.prepareAlert(forError: "registration_password_error")
             present(alert, animated: true, completion: nil)
         }
     }

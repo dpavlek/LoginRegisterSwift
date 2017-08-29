@@ -17,3 +17,7 @@
 "default_error" = "Unknown Error Happened.";
 "login_bad_request" = "Server returned error 400.";
 "login_success" = "Successfully logged in!";
+"server_error" = "Server unreachable.";
+"unauthorized" = "User is not authorized.";
+"registration_server_fail" = "Something happened.";
+"registration_user_exists" = "User already exists!";

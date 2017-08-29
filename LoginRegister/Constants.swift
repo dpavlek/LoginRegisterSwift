@@ -10,7 +10,8 @@ import Foundation
 import Alamofire
 
 class Constants{
-    static let headers: HTTPHeaders = ["authorization-static": "cobebackendtemplate"]
+    static var headers: HTTPHeaders = ["authorization-static": "cobebackendtemplate"]
+    static var authHeaders: HTTPHeaders = Constants.headers
     static let header: String = "cobebackendtemplate"
     static let baseURL: String = "https://cobebackendtemplate.herokuapp.com"
 }

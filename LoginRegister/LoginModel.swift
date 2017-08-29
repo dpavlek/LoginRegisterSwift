@@ -36,4 +36,6 @@ class LoginInfo {
 enum LoginError: Error{
     case none
     case badRequest
+    case serverError
+    case unauthorized
 }

@@ -29,6 +29,10 @@ class LoginViewModel {
                     onCompletion(LoginError.badRequest)
                     return
                 }
+                guard response["statusCode"].intValue != 401 else {
+                    onCompletion(LoginError.unauthorized)
+                    return
+                }
                 let token = response["token"].stringValue
                 self?.keychain.set(token, forKey: "token")
                 User.currentUser?.loggedIn = true
@@ -36,16 +40,8 @@ class LoginViewModel {
 
             case .failure(let error):
                 print(error)
-                onCompletion(LoginError.badRequest)
+                onCompletion(LoginError.serverError)
             }
         }
-    }
-
-    // TO-DO: Find a way not to have this declared twice in the app
-    func prepareAlert(forError errorDesc: String) -> UIAlertController {
-        let alertMessage = NSLocalizedString(errorDesc, comment: "")
-        let alert = UIAlertController(title: "Error", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        return alert
     }
 }

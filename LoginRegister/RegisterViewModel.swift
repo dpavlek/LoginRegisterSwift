@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class RegisterViewModel {
     
@@ -30,14 +31,7 @@ class RegisterViewModel {
         }
     }
     
-    func prepareAlert(forError errorDesc: String) -> UIAlertController {
-        let alertMessage = NSLocalizedString(errorDesc, comment: "")
-        let alert = UIAlertController(title: "Error", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        return alert
-    }
-    
-    func sendRegistrationToServer(userData: registerInfo, onCompletion: @escaping (() -> Void)) {
+    func sendRegistrationToServer(userData: registerInfo, onCompletion: @escaping ((registrationServerError) -> Void)) {
         
         let imageData: Data = UIImageJPEGRepresentation(userData.image!, 0.02)!
         let jsonData = try? JSONSerialization.data(withJSONObject: userData.returnDictionary(), options: .prettyPrinted)
@@ -54,12 +48,22 @@ class RegisterViewModel {
             switch encodingResult {
             case .success(let upload, _, _):
                 upload.responseJSON { response in
+                    switch response.result {
+                    case .success(let data):
+                        let response = JSON(data)
+                        guard response["statusCode"].intValue != 409 else {
+                            onCompletion(registrationServerError.userExists)
+                            return
+                        }
+                    case .failure( _):
+                        onCompletion(registrationServerError.error)
+                    }
                     debugPrint(response)
-                    onCompletion()
+                    onCompletion(registrationServerError.none)
                 }
             case .failure(let encodingError):
                 print(encodingError)
-                onCompletion()
+                onCompletion(registrationServerError.error)
             }
         })
     }

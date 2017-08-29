@@ -14,7 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    
+
+    let mainViewModel = MainViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -23,6 +25,24 @@ class ViewController: UIViewController {
         if !Connectivity.isConnectedToInternet {
             self.loginAgainButton.isEnabled = false
             return
+        }
+        if (User.currentUser?.loggedIn)! {
+            self.mainViewModel.getUser { [weak self] error in
+                switch error {
+                case .none:
+                    self?.usernameLabel.text = User.currentUser?.username
+                    self?.emailLabel.text = User.currentUser?.email
+                case .badRequest:
+                    let alert = UIAlertController.prepareAlert(forError: "login_bad_request")
+                    self?.present(alert, animated: true, completion: nil)
+                case .serverError:
+                    let alert = UIAlertController.prepareAlert(forError: "server_error")
+                    self?.present(alert, animated: true, completion: nil)
+                case .unauthorized:
+                    let alert = UIAlertController.prepareAlert(forError: "unauthorized")
+                    self?.present(alert, animated: true, completion: nil)
+                }
+            }
         }
     }
 

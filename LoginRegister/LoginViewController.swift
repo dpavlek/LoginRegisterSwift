@@ -82,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func dismissLogin(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func ForgotPasswordAction(_ sender: UIButton) {
@@ -95,8 +95,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             case .none:
                 self?.navigationController?.popViewController(animated: true)
             case .badRequest:
-                let alert = self?.loginViewModel.prepareAlert(forError: "login_bad_request")
-                self?.present(alert!, animated: true, completion: nil)
+                let alert = UIAlertController.prepareAlert(forError: "login_bad_request")
+                self?.present(alert, animated: true, completion: nil)
+            case .serverError:
+                let alert = UIAlertController.prepareAlert(forError: "server_error")
+                self?.present(alert, animated: true, completion: nil)
+            case .unauthorized:
+                let alert = UIAlertController.prepareAlert(forError: "unauthorized")
+                self?.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -104,7 +110,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func registerAction(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Register", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "registrationViewController")
-        self.navigationController?.show(controller, sender: self)
+        navigationController?.show(controller, sender: self)
     }
     
 }

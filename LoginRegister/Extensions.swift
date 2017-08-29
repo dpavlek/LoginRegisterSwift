@@ -16,3 +16,13 @@ extension String {
         return emailTest.evaluate(with: self)
     }
 }
+
+extension UIAlertController {
+    static func prepareAlert(forError errorDesc: String) -> UIAlertController {
+        let alertMessage = NSLocalizedString(errorDesc, comment: "")
+        let alert = UIAlertController(title: "Error", message: alertMessage, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        return alert
+    }
+}
+
