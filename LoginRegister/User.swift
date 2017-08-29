@@ -15,14 +15,12 @@ class User {
 
     var username: String?
     var email: String?
-    var password: String?
     var icon: UIImage?
     var loggedIn: Bool = false
 
     private init?() {
         self.username = nil
         self.email = nil
-        self.password = nil
         self.icon = nil
     }
 }

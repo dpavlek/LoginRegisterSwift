@@ -51,11 +51,15 @@ class RegisterViewModel {
                     switch response.result {
                     case .success(let data):
                         let response = JSON(data)
+                        guard response["statusCode"].intValue != 400 else {
+                            onCompletion(registrationServerError.badRequest)
+                            return
+                        }
                         guard response["statusCode"].intValue != 409 else {
                             onCompletion(registrationServerError.userExists)
                             return
                         }
-                    case .failure( _):
+                    case .failure:
                         onCompletion(registrationServerError.error)
                     }
                     debugPrint(response)

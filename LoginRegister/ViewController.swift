@@ -26,7 +26,7 @@ class ViewController: UIViewController {
             self.loginAgainButton.isEnabled = false
             return
         }
-        if (User.currentUser?.loggedIn)! {
+        else if (User.currentUser?.loggedIn)! {
             self.mainViewModel.getUser { [weak self] error in
                 switch error {
                 case .none:

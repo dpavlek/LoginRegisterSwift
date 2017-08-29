@@ -41,6 +41,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 case .userExists:
                     let alert = UIAlertController.prepareAlert(forError: "registration_user_exists")
                     self?.present(alert, animated: true, completion: nil)
+                case .badRequest:
+                    let alert = UIAlertController.prepareAlert(forError: "login_bad_request")
+                    self?.present(alert, animated: true, completion: nil)
                 }
             }
         }

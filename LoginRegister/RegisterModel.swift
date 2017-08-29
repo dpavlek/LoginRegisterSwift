@@ -38,4 +38,5 @@ enum registrationServerError: Error{
     case none
     case error
     case userExists
+    case badRequest
 }
